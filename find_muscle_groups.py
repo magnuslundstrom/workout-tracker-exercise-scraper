@@ -2,9 +2,8 @@ import json
 
 
 def find_unique_muscle_groups(): 
-
-	with open('write.json', 'r') as f:
-		data = json.load(f)
+	exercises_json = open('exercises.json')
+	data = json.load(exercises_json)	
 
 	unique_muscle_groups = []
 
@@ -21,3 +20,5 @@ def write_muscle_groups():
 	writeFile = open('muscle_groups.json', 'w', encoding='utf8')
 	json.dump(muscle_groups, writeFile, ensure_ascii=False)
 	writeFile.close()
+
+write_muscle_groups()
